@@ -1,5 +1,20 @@
 export const projects = [
     {
+        name: "Personal Website",
+        descript: "Kişisel websitem",
+        demo: "https://samettekin.netlify.app/",
+        code: "https://github.com/samettekin01/personal-website",
+        img: "https://github.com/samettekin01/personal-website/raw/master/main.gif",
+        lang: {
+            html: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
+            css: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+            js: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+            react: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+            tailwind: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+            bootstrap: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
+        }
+    },
+    {
         name: "POS System",
         descript: "POS Sistem uygulaması.",
         demo: "https://patro-pos-system.netlify.app/",
