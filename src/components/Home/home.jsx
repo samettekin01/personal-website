@@ -1,4 +1,5 @@
 import { about } from "../data/about"; 
+import "./home.css"
 function Home({ value }) {
         return (
             <div className={
@@ -12,7 +13,7 @@ function Home({ value }) {
                 <div className="flex flex-row justify-center mt-4 flex-wrap">
                     {Object.keys(about.lang).map((data,key) => 
                     <img 
-                    className="w-11 m-2"
+                    className="lang-icon"
                     key={key}
                     src={about.lang[data]}
                     alt={data}
