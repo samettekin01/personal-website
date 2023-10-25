@@ -1,0 +1,25 @@
+.main-container {
+    @apply flex flex-row w-10/12 h-5/6 items-center shadow-2xl rounded-3xl;
+}
+
+.profile {
+    @apply flex flex-col relative items-center h-full rounded-3xl;
+}
+
+.content-container {
+    @apply flex flex-row overflow-auto relative w-full h-full;
+    min-width: 217px;
+}
+
+.menu-icons:hover {
+    @apply text-red-700
+}
+
+@media (max-width: 595px) {
+    .main-container {
+        @apply flex flex-col
+    }
+    .profile{
+        @apply w-full
+    }
+}

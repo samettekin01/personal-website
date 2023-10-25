@@ -1,0 +1,13 @@
+.project-image{
+    @apply relative 
+}
+
+.project-descript{
+    @apply absolute top-3 bg-gray-900 w-full p-1 flex items-center opacity-0 h-0;
+    transition: height .3s, opacity .3s;
+    z-index: -1;
+}
+
+.project-image:hover .project-descript{
+    @apply opacity-70 h-5/6
+}

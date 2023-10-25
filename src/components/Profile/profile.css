@@ -1,0 +1,76 @@
+.profile-container {
+    @apply flex flex-col p-4 justify-center rounded-3xl h-full relative;
+    background: linear-gradient(45deg, )
+}
+
+.pr-img-container {
+    @apply p-1;
+    clip-path: circle(50%);
+    background: linear-gradient(45deg, #610C9F, #940B92, #DA0C81, #E95793);
+    transition: transform .5s;
+}
+.pr-img-container:hover{
+    transform: scale(1.05)
+}
+
+.pr-img{
+    width: 250px;
+    height: 250px;
+    background-size: 150%;
+    background-position-y: 456px;
+    background-position-x: 376px;
+    clip-path: circle(50%);
+}
+
+.info-container {
+    @apply flex flex-col text-center mt-3;
+}
+
+.discord-container:hover .adress{
+    @apply right-0;
+    opacity: 90%;
+    transition: opacity 1s;
+}
+.adress{
+    @apply absolute opacity-0 -bottom-3
+}
+.contact-cont{
+    @apply flex flex-row justify-center relative
+}
+.list-button{
+    @apply absolute bottom-3 p-2 rounded-lg shadow-md hover:opacity-80 active:opacity-100;
+}
+.list-options{
+    @apply absolute bottom-14 left-7 rounded-lg shadow-2xl w-28 text-lg;
+    z-index: 1;
+}
+
+@media (max-width:595px) {
+    .profile-container{
+        @apply flex flex-row items-center w-full justify-between
+    }
+    .pr-img-container{
+        width: 150px;
+        height: 150px;
+        @apply flex items-center justify-center
+    }
+    .pr-img{
+        width: 140px;
+        height: 140px;
+        background-size: 150%;
+        background-position-x: 212px;
+        background-position-y: 257px;
+    }
+    .info-container{
+        @apply text-sm
+    }
+    .contact-cont{
+        @apply flex-col
+    }
+    .list-button{
+        @apply p-1 bottom-2 left-3
+    }
+    .list-options{
+        @apply bottom-11 text-sm
+    }
+}
