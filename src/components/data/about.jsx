@@ -14,7 +14,7 @@ export const about = {
     discordIcon: discord,
     mail: "samet.tekin.01@gmail.com",
     about: {
-        year1994: "1994 yılında İstabul / Esenlerde doğdum",
+        year1994: "1994 yılında İstanbul / Esenlerde doğdum",
         year2008: "2008-2012 yıları arasında Bakırköy Ticaret Meslek Lisesinde okudum.",
         year2012: "2012-2014 yılında Sakarya Üniversitesi / İşletme Yönetimi bölümünü okudum",
         year2016: "2008 ve 2016 yılları arası yani 15 yaşımdan beri yazılım ile ilgileniyorum. İlk programlamaya Visual Basic ile başladım. Yazılım geliştirmek benim tutkum olacağını anlamıştım. Daha sonra Visual Basic dilinin bana yetmediğini anladığımda C# diline geçiş yaptım. Burada kendimi geliştirmeye başladıktan sonra yapay zekanın gelişmeye başladığını öğrendim. Bunun için C++ diline geçiş yaptım ve buradan da temel oluşturduktan sonra OpenCV kütüphanesinde görüntü işleme ile ufak çaplı yüz tanıma ve nesne tanıma programları geliştirdim. Fakat 2014-2016 yıllarında yeterli kaynak yoktu. Hatta OpenCV'nin kendi dökümanları dışında dahi çok iyi kaynak yoktu. ",
