@@ -1,7 +1,6 @@
 import { about } from "../data/about";
 
 function About({ value }) {
-    console.log(Object.keys(about.about))
     return (
         <div className={
             `about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min
