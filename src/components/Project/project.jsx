@@ -2,7 +2,7 @@ import { useTheme } from "../Providers/provider";
 import { projects } from "../data/projects";
 import "./project.css"
 
-function Project({ value }) {
+function Project() {
   const { color } = useTheme();
   const style = {
     background: `linear-gradient(45deg, ${color.background1}, ${color.background2})`,
@@ -10,11 +10,8 @@ function Project({ value }) {
   }
   return (
     <div className={
-      `about-container absolute w-full h-full flex flex-row flex-wrap justify-around items-center overflow-auto p-2
-      ${value ? `opacity-100` : `opacity-0`}`}
-      style={value ? { display: "flex" } : { display: "none" }}
+      `about-container absolute w-full h-full flex flex-row flex-wrap justify-around items-center overflow-auto p-2`}
     >
-
       {
         projects && projects.map((data, index) =>
           <div key={index} className="project-card flex flex-col items-center m-4 p-2 rounded-xl shadow-xl" style={style}>
@@ -50,13 +47,13 @@ function Project({ value }) {
               ><span>Code</span></a>
             </div>
             <div className="flex flex-row w-full justify-center mt-2">
-            {
-            Object.keys(data.lang).map((d,i) => data.lang[d] && <img key={i} width="30px" height="30px" className="m-1" src={data.lang[d]} alt={d}/>)
-            }
+              {
+                Object.keys(data.lang).map((d, i) => data.lang[d] && <img key={i} width="30px" height="30px" className="m-1" src={data.lang[d]} alt={d} />)
+              }
             </div>
           </div>
         )}
-       
+
     </div>
   )
 }

@@ -1,12 +1,9 @@
 import { about } from "../data/about";
 
-function Contact({ value }) {
+function Contact() {
   return (
     <div className={
-      `about-container absolute w-full h-full flex flex-col justify-center items-center
-      ${value ? `opacity-100` : `opacity-0`}`
-    }
-      style={value ? { display: "flex" } : { display: "none" }}
+      `about-container absolute w-full h-full flex flex-col justify-center items-center`}
     >
       <span className="text-3xl">Contact me</span>
       <div className='flex flex-row justify-center relative'>

@@ -1,11 +1,10 @@
 import { about } from "../data/about";
 
-function About({ value }) {
+function About() {
     return (
         <div className={
-            `about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min
-            ${value ? `opacity-100` : `opacity-0`}`}
-            style={value ? { display: "flex" } : { display: "none" }}
+            `about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min`
+        }
         >
             <ul>
                 {about.about && Object.keys(about.about).map((data, index) =>
