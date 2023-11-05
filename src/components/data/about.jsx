@@ -32,6 +32,8 @@ export const about = {
         typescript: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
         tailwind: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
         bootstrap: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
-        firebse: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
+        materialui: "https://seeklogo.com/images/M/material-ui-logo-5BDCB9BA8F-seeklogo.com.png",
+        firebse: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+        sass: "https://cdn.iconscout.com/icon/free/png-512/free-sass-226054.png?f=webp&w=256"
     }
 }

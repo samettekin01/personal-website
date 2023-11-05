@@ -1,5 +1,21 @@
 export const projects = [
     {
+        name: "E-Commerce",
+        descript: "E-Ticaret Sitesi Uygulaması",
+        demo: "https://patro-e-commerce.netlify.app/",
+        code: "https://github.com/samettekin01/e-commerce/",
+        img: "https://user-images.githubusercontent.com/51747702/280522210-b2262a58-fded-4ca8-a8ec-ac290daa1fa3.png",
+        lang: {
+            react: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+            typescript: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+            tailwind: "",
+            bootstrap: "",
+            materialui: "https://seeklogo.com/images/M/material-ui-logo-5BDCB9BA8F-seeklogo.com.png",
+            sass: "https://cdn.iconscout.com/icon/free/png-512/free-sass-226054.png?f=webp&w=256",
+            redux: "https://cdn.iconscout.com/icon/free/png-512/free-redux-283024.png?f=webp&w=256"
+        }
+    },
+    {
         name: "Personal Website",
         descript: "Kişisel websitem",
         demo: "https://samettekin.netlify.app/",
