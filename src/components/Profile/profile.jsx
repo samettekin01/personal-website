@@ -27,6 +27,9 @@ function Profile() {
       <div className='info-container'>
         <span>{about.name}</span>
         <span>{about.title}</span>
+        <button className='info-cv'>
+          <a href={about.cv} download="Samet-Tekin-CV">CV indir</a>
+        </button>
       </div>
       <div className='contact-cont'>
         <a href={about.linkedIn} target="_blank" rel="noreferrer"><img src={about.linkedInIcon} className='w-10 m-2' alt='linkedln' /></a>

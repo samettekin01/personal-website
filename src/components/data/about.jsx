@@ -2,6 +2,7 @@ import linkedIn from "../../images/linkedIn.png"
 import github from "../../images/github.png"
 import discord from "../../images/Discord.png"
 import profile from "../../images/profile.jpg"
+import cv from "../../assets/Samet-Tekin-CV.pdf"
 export const about = {
     name: "Samet Tekin",
     title: "FrontEnd Developer",
@@ -13,6 +14,7 @@ export const about = {
     discord: "PatroSam#0922",
     discordIcon: discord,
     mail: "samet.tekin.01@gmail.com",
+    cv: cv,
     about: {
         year1994: "1994 yılında İstanbul / Esenlerde doğdum",
         year2008: "2008-2012 yılları arasında Bakırköy Ticaret Meslek Lisesinde okudum.",

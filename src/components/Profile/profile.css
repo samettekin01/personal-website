@@ -23,7 +23,7 @@
 }
 
 .info-container {
-    @apply flex flex-col text-center mt-3;
+    @apply flex flex-col items-center text-center mt-3;
 }
 
 .discord-container:hover .adress{
@@ -35,7 +35,7 @@
     @apply absolute opacity-0 -bottom-3
 }
 .contact-cont{
-    @apply flex flex-row justify-center relative
+    @apply flex flex-row items-center justify-center relative
 }
 .list-button{
     @apply absolute bottom-3 p-2 rounded-lg shadow-md hover:opacity-80 active:opacity-100;
@@ -43,6 +43,9 @@
 .list-options{
     @apply absolute bottom-14 left-7 rounded-lg shadow-2xl w-28 text-lg;
     z-index: 1;
+}
+.info-cv{
+    @apply flex items-center pr-3 pl-3 p-1 text-white bg-sky-500 rounded-full hover:bg-sky-700 active:bg-sky-600;
 }
 
 @media (max-width:595px) {
