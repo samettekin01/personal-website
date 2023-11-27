@@ -5,7 +5,8 @@ Kişisel bilgilerimin ve projelerimin yer aldığı portfolyo websitedir.
 ## Built with:
 
 - React
-- React Context 
+- React Context
+- React Router
 - HeadlessUI
 - Bootstrap Icon
 - Tailwind CSS
