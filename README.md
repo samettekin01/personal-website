@@ -5,7 +5,8 @@ Kişisel bilgilerimin ve projelerimin yer aldığı portfolyo websitedir.
 ## Built with:
 
 - React
-- React Context 
+- React Context
+- React Router
 - HeadlessUI
 - Bootstrap Icon
 - Tailwind CSS
@@ -17,4 +18,5 @@ https://samettekin.netlify.app
 ![](https://github.com/samettekin01/personal-website/blob/master/main.gif)
 
 - Responsive
+
 ![](https://github.com/samettekin01/personal-website/blob/master/responsive.gif)
