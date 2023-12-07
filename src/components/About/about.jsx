@@ -1,20 +1,18 @@
-import { about } from "../data/about";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { handleAbout } from "../redux/slices/aboutSlice";
 
 function About() {
+    const about = useSelector(state => state.about.about)
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(handleAbout())
+    }, [dispatch])
     return (
-        <div className={
-            `about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min`
-        }
-        >
-            <ul>
-                {about.about && Object.keys(about.about).map((data, index) =>
-                    <li key={index} className="list-disc mb-2">
-                        <span className="font-bold underline">{data.toLocaleUpperCase().replace(/year/i, "")}</span>: {about.about[data]}
-                    </li>
-                )}
-            </ul>
-            <span className="mt-10 font-bold underline"> Şuanda ne yapıyorum:</span><span>{about.now}</span>
-            <span className="mt-10 font-bold underline">Hobilerim: </span><span>{about.hobbys}</span>
+        <div className="about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min">
+            <span className="whitespace-pre-line">{about && about.about}</span>
+            <span className="mt-10 font-bold underline">Şuanda ne yapıyorum:</span><span>{about && about.now}</span>
+            <span className="mt-10 font-bold underline">Hobilerim: </span><span>{about && about.hobbies}</span>
         </div>
     )
 }
