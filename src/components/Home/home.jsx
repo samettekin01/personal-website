@@ -22,8 +22,7 @@ function Home() {
                         src={about.lang[data]}
                         alt={data}
                     />
-                ) : "...Loading"
-                /* className="lang-icon" */}
+                ) : "...Loading"}
             </div>
         </div>
     )
