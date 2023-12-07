@@ -1,5 +1,5 @@
-import Profile from '../Profile/profile';
-import { useTheme } from '../Providers/provider';
+import Profile from '../profile/profile';
+import { useTheme } from '../providers/provider';
 import { BsEnvelope, BsFileEarmarkCode, BsHouse, BsPerson } from 'react-icons/bs'
 
 import './main.css';
