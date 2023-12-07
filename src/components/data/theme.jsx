@@ -27,7 +27,7 @@ export const theme = [
         background1: "#461959",
         background2: "#7A316F",
         color1: "#CD6688",
-        color2: "#AED8CC"
+        color2: "#EEEEEE"
 
     }
 ]
