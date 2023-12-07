@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home/home";
-import Project from "./components/Project/project";
-import About from "./components/About/about";
-import Contact from "./components/Contact/contact";
+import Home from "./components/home/home";
+import Project from "./components/project/project";
+import About from "./components/about/about";
+import Contact from "./components/contact/contact";
 import App from "./App";
+import AdminPanel from "./components/admin/adminPanel";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                 {
                     path: "/contact",
                     element: <Contact />
+                },
+                {
+                    path: "/adminpanel",
+                    element: <AdminPanel />
                 }
             ]
     }
