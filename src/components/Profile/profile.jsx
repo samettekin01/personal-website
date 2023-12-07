@@ -1,8 +1,9 @@
-import React from 'react'
-import { useTheme } from '../Providers/provider'
+import React, { useEffect } from 'react'
+import { useTheme } from '../providers/provider'
 import { Listbox } from '@headlessui/react'
 import { theme } from '../data/theme'
-import { about } from '../data/about'
+import { useDispatch, useSelector } from 'react-redux'
+import { handleAbout, handleIcons } from '../redux/slices/aboutSlice'
 import "./profile.css"
 
 function Profile() {
@@ -11,6 +12,13 @@ function Profile() {
     background: `linear-gradient(45deg, ${color.background1}, ${color.background2})`,
     color: color.color2
   }
+  const about = useSelector(state => state.about.about)
+  const icons = useSelector(state => state.about.icons)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(handleAbout())
+    dispatch(handleIcons())
+  }, [dispatch])
   return (
     <div
       className='profile-container'
@@ -20,22 +28,22 @@ function Profile() {
         <div
           className='pr-img'
           style={{
-            backgroundImage: `url(${about.profile})`,
+            backgroundImage: `url(${icons.profile})`,
           }}
           alt='Samet Tekin' />
       </div>
       <div className='info-container'>
         <span>{about.name}</span>
         <span>{about.title}</span>
-        <button className='info-cv'>
-          <a href={about.cv} download="Samet-Tekin-CV">CV indir</a>
+        <button className='btn-blue'>
+          <a href="https://drive.google.com/file/d/1gZGGnlPQGp85Hl9cYGJlH_beUdIEFpdB/view?usp=sharing" target='_blank' rel='noreferrer'>CV indir</a>
         </button>
       </div>
       <div className='contact-cont'>
-        <a href={about.linkedIn} target="_blank" rel="noreferrer"><img src={about.linkedInIcon} className='w-10 m-2' alt='linkedln' /></a>
-        <a href={about.github} target="_blank" rel="noreferrer"><img src={about.githubIcon} className='w-10 m-2' alt='github' /></a>
+        <a href={about.linkedIn} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
+        <a href={icons.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
         <div className='discord-container'>
-          <img src={about.discordIcon} className='w-10 m-2' alt='discord' />
+          <img src={icons.discord} className='w-10 m-2' alt='discord' />
           <div className='adress'><span>{about.discord}</span></div>
         </div>
       </div>

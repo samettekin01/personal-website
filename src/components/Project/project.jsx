@@ -1,6 +1,8 @@
-import { useTheme } from "../Providers/provider";
-import { projects } from "../data/projects";
+import { useTheme } from "../providers/provider";
 import "./project.css"
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { handleProjects } from "../redux/slices/projectsSlice";
 
 function Project() {
   const { color } = useTheme();
@@ -8,12 +10,17 @@ function Project() {
     background: `linear-gradient(45deg, ${color.background1}, ${color.background2})`,
     color: color.color2
   }
+  const projects = useSelector(state => state.projects.projects)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(handleProjects())
+  }, [dispatch])
   return (
     <div className={
       `about-container absolute w-full h-full flex flex-row flex-wrap justify-around items-center overflow-auto p-2`}
     >
       {
-        projects && projects.map((data, index) =>
+        projects ? projects.map((data, index) =>
           <div key={index} className="project-card flex flex-col items-center m-4 p-2 rounded-xl shadow-xl" style={style}>
             <span>{data.name}</span>
             <div className="project-image" style={{
@@ -26,7 +33,7 @@ function Project() {
               zIndex: "1",
             }} >
               <div className="project-descript">
-                {data.descript}
+                {data.description}
               </div>
             </div>
             <div className="flex flex-row justify-around w-full">
@@ -52,7 +59,7 @@ function Project() {
               }
             </div>
           </div>
-        )}
+        ): "...loading"}
 
     </div>
   )
