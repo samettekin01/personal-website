@@ -17,7 +17,7 @@
     width: 250px;
     height: 250px;
     background-size: 150%;
-    background-position-y: 456px;
+    background-position-y: -100px;
     background-position-x: 376px;
     clip-path: circle(50%);
 }
@@ -44,9 +44,6 @@
     @apply absolute bottom-14 left-7 rounded-lg shadow-2xl w-28 text-lg;
     z-index: 1;
 }
-.info-cv{
-    @apply flex items-center pr-3 pl-3 p-1 m-1 text-white bg-sky-500 rounded-full hover:bg-sky-700 active:bg-sky-600;
-}
 
 @media (max-width:595px) {
     .profile-container{
@@ -61,8 +58,8 @@
         width: 140px;
         height: 140px;
         background-size: 150%;
+        background-position-y: -50px;
         background-position-x: 212px;
-        background-position-y: 257px;
     }
     .info-container{
         @apply text-sm
