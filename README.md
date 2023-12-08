@@ -10,6 +10,8 @@ Kişisel bilgilerimin ve projelerimin yer aldığı portfolyo websitedir.
 - HeadlessUI
 - Bootstrap Icon
 - Tailwind CSS
+- Redux
+- Firestore 
 
 ## Demo
 https://samettekin.netlify.app
