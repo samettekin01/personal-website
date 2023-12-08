@@ -86,8 +86,8 @@ function EditorProjectForm({ id }) {
     }, [editStatus, project.lang, values])
 
     return (
-        <form className={`flex flex-col p-2 opacity-90 rounded-lg bg-sky-300 ${editStatus ? "block" : "hidden"}`} onSubmit={handleSubmit}>
-            <label htmlFor="name" className="input-label text-black">Name:</label>
+        <form className={`flex flex-col w-3/5 min-w-max p-2 rounded-lg bg-cyan-700 ${editStatus ? "block" : "hidden"}`} onSubmit={handleSubmit}>
+            <label htmlFor="name" className="input-label ">Name:</label>
             <input
                 onChange={handleChange}
                 value={values.name}
@@ -96,7 +96,7 @@ function EditorProjectForm({ id }) {
                 id="name"
                 type="text"
                 className="input-blue mt-2 border-2" />
-            <label htmlFor="description" className="input-label text-black">Description:</label>
+            <label htmlFor="description" className="input-label ">Description:</label>
             <input
                 onChange={handleChange}
                 value={values.description}
@@ -105,7 +105,7 @@ function EditorProjectForm({ id }) {
                 id="description"
                 type="text"
                 className="input-blue mt-2" />
-            <label htmlFor="code" className="input-label text-black">Code:</label>
+            <label htmlFor="code" className="input-label ">Code:</label>
             <input
                 onChange={handleChange}
                 value={values.code}
@@ -114,7 +114,7 @@ function EditorProjectForm({ id }) {
                 id="code"
                 type="text"
                 className="input-blue mt-2" />
-            <label htmlFor="demo" className="input-label text-black">Demo:</label>
+            <label htmlFor="demo" className="input-label ">Demo:</label>
             <input
                 onChange={handleChange}
                 value={values.demo}
@@ -123,7 +123,7 @@ function EditorProjectForm({ id }) {
                 id="demo"
                 type="text"
                 className="input-blue mt-2" />
-            <label htmlFor="img" className="input-label text-black">İmage:</label>
+            <label htmlFor="img" className="input-label ">İmage:</label>
             <input
                 onChange={handleChange}
                 value={values.img}
@@ -134,14 +134,16 @@ function EditorProjectForm({ id }) {
                 className="input-blue mt-2" />
             <div className="grid grid-cols-3" role="group">
                 {about ? Object.keys(about.lang).map((data, index) =>
-                    <label htmlFor={data} key={index}><input
-                        onChange={handleSetSkill}
-                        type="checkbox"
-                        name="lang"
-                        id={data}
-                        value={data}
-                        checked={projectData && projectData.includes(data)}
-                    />{data}</label>
+                    <label className="whitespace-nowrap" htmlFor={data} key={index}>
+                        <input
+                            className="checkbox-style"
+                            onChange={handleSetSkill}
+                            type="checkbox"
+                            name="lang"
+                            id={data}
+                            value={data}
+                            checked={projectData && projectData.includes(data)}
+                        />{data}</label>
                 ) : "...loading"}
             </div>
             <input className="btn-blue" type="submit" value="Apply" />

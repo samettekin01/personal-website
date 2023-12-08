@@ -38,7 +38,6 @@ function AboutEditor() {
     return (
         <div className="w-full flex justify-center">
             <form className="flex flex-col w-3/5 h-5/6 mt-2" onSubmit={handleSubmit}>
-                <div className="w-full text-center text-lg">About</div>
                 <label htmlFor="name" className="input-label">Name</label>
                 <input className="input-blue" onChange={handleChange} value={values.name} type="text" name="name" id="name" />
                 <label htmlFor="title" className="input-label">Title</label>
@@ -59,13 +58,20 @@ function AboutEditor() {
                 <div className="input-grid">
                     {Object.keys(langsIcons).map((icon, index) => (
                         <label htmlFor={icon} key={index}>
-                            <input onChange={handleChange} type="checkbox" name="lang" value={icon} id={icon} />{icon}
+                            <input 
+                            className="checkbox-style"
+                            onChange={handleChange} 
+                            type="checkbox" 
+                            name="lang" 
+                            value={icon} 
+                            id={icon} 
+                            />{icon}
                         </label>
                     ))}
                 </div>
                 <label htmlFor="about" className="input-label">About</label>
                 <textarea className="input-blue h-64" onChange={handleChange} value={values.about} name="about" id="about" />
-                <input className="btn-blue" type="submit" />
+                <input className="btn-blue" type="submit" value="Submit" />
             </form>
         </div>
     )

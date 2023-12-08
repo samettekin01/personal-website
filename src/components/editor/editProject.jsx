@@ -39,8 +39,7 @@ function EditProject() {
 
     return (
         <div className="w-full flex justify-center relative">
-            <div className="w-4/5 mt-2">
-                <div className="w-full text-center text-lg">Edit Project</div>
+            <div className="w-3/5 mt-2">
                 {projects ? projects.map(data =>
                     <div
                         className="p-2 m-1 rounded-md w-full flex items-center justify-between hover:opacity-80 hover:shadow-xl"
@@ -55,7 +54,7 @@ function EditProject() {
                     </div>
                 ) : ""}
             </div>
-            <div className="absolute">
+            <div className="absolute w-full flex justify-center">
                 <EditorProjectForm id={projectID} />
             </div>
         </div >

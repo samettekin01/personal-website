@@ -18,16 +18,19 @@ function Tabs() {
             dispatch(signStatus(false))
         }
     }
+    const tabMenu = ["About", "Add Project", "Edit Project"]
     return (
         <div className="w-full h-full ">
             <div className="flex justify-end mt-2 mr-2">
-                <button className="btn-blue" onClick={handleSignOut}>Sign Out</button>
+                <button className="btn-blue" onClick={handleSignOut}>Sign out</button>
             </div>
             <Tab.Group>
-                <Tab.List className="flex p-1 justify-center">
-                    <Tab className="btn-blue">About</Tab>
-                    <Tab className="btn-blue">Add Project</Tab>
-                    <Tab className="btn-blue">Edit Project</Tab>
+                <Tab.List className="flex p-2 justify-center gap-2 rounded-xl bg-cyan-900/20 w-3/5 mx-auto">
+                    {
+                        tabMenu.map((menu, index) =>
+                            <Tab key={index} className={({ selected }) => `w-2/5 rounded-lg text-sm p-2 ${selected ? `bg-white text-black shadow` : `text-white hover:bg-white/[0.10] `}`}>{menu}</Tab>
+                        )
+                    }
                 </Tab.List>
                 <Tab.Panels>
                     <Tab.Panel><AboutEditor /></Tab.Panel>

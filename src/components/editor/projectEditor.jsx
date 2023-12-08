@@ -43,7 +43,6 @@ function ProjectEditor() {
             {isUserSignIn &&
                 <div className="flex flex-col w-full h-full items-center">
                     <div className="flex flex-col w-3/5 mt-2">
-                        <span className="w-full text-center text-lg">Project Informations</span>
                         <form className="flex flex-col" onSubmit={handleSubmit}>
                             <label className="input-label">Name</label>
                             <input
@@ -93,7 +92,14 @@ function ProjectEditor() {
                             <div className="input-grid">
                                 {
                                     about ? Object.keys(about.lang).map((data, index) =>
-                                        <label key={index}><input onChange={handleChange} type="checkbox" name="lang" value={data} />{data}</label>
+                                        <label key={index}>
+                                            <input
+                                                className="checkbox-style"
+                                                onChange={handleChange}
+                                                type="checkbox"
+                                                name="lang"
+                                                value={data}
+                                            />{data}</label>
                                     ) : "...loading"
                                 }
                             </div>
