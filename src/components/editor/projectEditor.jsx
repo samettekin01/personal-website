@@ -1,5 +1,5 @@
 import { db } from "../../firebase/firebase"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 import { useFormik } from "formik"
 import { langsIcons } from "../data/language"
 import { useDispatch, useSelector } from "react-redux"
@@ -30,7 +30,8 @@ function ProjectEditor() {
                 code: values.code,
                 demo: values.demo,
                 img: values.img,
-                lang: langs
+                lang: langs,
+                created: serverTimestamp()
             })
             resetForm();
         }
