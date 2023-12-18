@@ -40,8 +40,8 @@ function Profile() {
         </button>
       </div>
       <div className='contact-cont'>
-        <a href={about.linkedIn} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
-        <a href={icons.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
+        <a href={about.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
+        <a href={about.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
         <div className='discord-container'>
           <img src={icons.discord} className='w-10 m-2' alt='discord' />
           <div className='adress'><span>{about.discord}</span></div>
