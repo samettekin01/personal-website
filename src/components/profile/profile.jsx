@@ -36,7 +36,7 @@ function Profile() {
         <span>{about.name}</span>
         <span>{about.title}</span>
         <button className='btn-blue'>
-          <a href="https://drive.google.com/file/d/1gZGGnlPQGp85Hl9cYGJlH_beUdIEFpdB/view?usp=sharing" target='_blank' rel='noreferrer'>CV indir</a>
+          <a href={about.cv} target='_blank' rel='noreferrer'>CV indir</a>
         </button>
       </div>
       <div className='contact-cont'>
