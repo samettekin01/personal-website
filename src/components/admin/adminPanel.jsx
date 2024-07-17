@@ -69,6 +69,7 @@ function AdminPanel() {
                             onChange={handleChange}
                             value={values.email}
                             required
+                            autoComplete="email"
                             className="text-black p-1 rounded-md outline-sky-600"
                         />
                         <label htmlFor="password" >Password:</label>
@@ -79,6 +80,7 @@ function AdminPanel() {
                             onChange={handleChange}
                             value={values.password}
                             required
+                            autoComplete="current-password"
                             className="text-black p-1 rounded-md outline-sky-600"
                         />
                         <button type="submit" className="p-2 mt-2 bg-sky-500 rounded-md w-1/5 ml-auto whitespace-nowrap min-w-fit" disabled={btn}>Sign in</button>

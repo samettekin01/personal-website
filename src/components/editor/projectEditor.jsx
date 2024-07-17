@@ -1,5 +1,5 @@
 import { db } from "../../firebase/firebase"
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"
+import { addDoc, collection } from "firebase/firestore"
 import { useFormik } from "formik"
 import { langsIcons } from "../data/language"
 import { useDispatch, useSelector } from "react-redux"
@@ -19,6 +19,9 @@ function ProjectEditor() {
         img: "",
         lang: {}
     }
+    
+    const time = new Date().valueOf()
+
     const { values, handleSubmit, handleChange, resetForm } = useFormik({
         initialValues,
         onSubmit: values => {
@@ -31,7 +34,7 @@ function ProjectEditor() {
                 demo: values.demo,
                 img: values.img,
                 lang: langs,
-                created: serverTimestamp()
+                created: time
             })
             resetForm();
         }
