@@ -24,7 +24,7 @@ function EditProject() {
     const handleEdit = (id) => {
         dispatch(getProject(id))
         setProjectID(id)
-        dispatch(projectShowHide())
+        dispatch(projectShowHide(true))
         if (projectStatus === "rejected") {
             dispatch(getProject(id))
         }

@@ -7,9 +7,8 @@ import { db } from "../../../firebase/firebase";
 import { useCallback, useEffect, useState } from "react";
 
 function EditorProjectForm({ id }) {
-    const editStatus = useSelector(state => state.projects.editStatus)
-    const about = useSelector(state => state.about.about)
-    const project = useSelector(state => state.projects.project)
+    const { editStatus, project } = useSelector(state => state.projects)
+    const { about } = useSelector(state => state.about)
     const [projectLangs, setProjectLangs] = useState(true);
     const [projectData, setProjectData] = useState([]);
 
@@ -25,15 +24,13 @@ function EditorProjectForm({ id }) {
     }
     const { values, handleSubmit, handleChange } = useFormik({
         initialValues,
-        onSubmit: values => {
+        onSubmit: async (values) => {
             let updateValue = {}
             let langs = {}
             Object.keys(values).forEach(val => {
                 if (values[val]) {
                     updateValue[val] = values[val]
-                } else {
-                    handleClose()
-                }
+                } 
             })
             if (Object.keys(values.lang).length === 0) {
                 delete updateValue.lang
@@ -44,12 +41,24 @@ function EditorProjectForm({ id }) {
                     lang: langs
                 }
             }
-            updateDoc(doc(db, "projects", id), updateValue)
+            await updateDoc(doc(db, "projects", id), updateValue)
             dispatch(handleProjects())
+            dispatch(projectShowHide(false))
+            resetValue()
         }
     })
     const handleClose = () => {
-        dispatch(projectShowHide())
+        dispatch(projectShowHide(false))
+        resetValue()
+    }
+    const resetValue = () => {
+        Object.keys(values).forEach(d => {
+            if (d !== "lang") {
+                values[d] = ""
+            } else {
+                values[d] = []
+            }
+        })
     }
     const handleSetSkill = e => {
         projectStatus()

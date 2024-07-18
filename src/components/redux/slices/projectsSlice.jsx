@@ -28,8 +28,8 @@ const projectsSlice = createSlice({
         editStatus: false
     },
     reducers: {
-        projectShowHide: state => {
-            state.editStatus = !state.editStatus
+        projectShowHide: (state, action) => {
+            state.editStatus = action.payload
         }
     },
     extraReducers: builder => {

@@ -10,5 +10,6 @@ export const langsIcons = {
     firebase: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain-wordmark.svg",
     sass: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
     redux: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
-    git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    figma: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
 }
