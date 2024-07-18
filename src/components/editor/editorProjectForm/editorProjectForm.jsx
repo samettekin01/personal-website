@@ -153,7 +153,7 @@ function EditorProjectForm({ id }) {
                             value={data}
                             checked={projectData && projectData.includes(data)}
                         />{data}</label>
-                ) : "...loading"}
+                ).sort() : "...loading"}
             </div>
             <input className="btn-blue" type="submit" value="Apply" />
             <input className="btn-red" type="button" onClick={handleClose} value="Close" />

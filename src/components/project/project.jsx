@@ -55,7 +55,7 @@ function Project() {
             </div>
             <div className="flex flex-row w-full justify-center mt-2">
               {
-                Object.keys(data.lang).map((d, i) => data.lang[d] && <img key={i} width="30px" height="30px" className="m-1" src={data.lang[d]} alt={d} />)
+                Object.keys(data.lang).sort().map((d, i) => data.lang[d] && <img key={i} width="30px" height="30px" className="m-1" src={data.lang[d]} alt={d} />)
               }
             </div>
           </div>
