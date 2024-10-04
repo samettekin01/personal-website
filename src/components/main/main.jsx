@@ -5,6 +5,7 @@ import { BsEnvelope, BsFileEarmarkCode, BsHouse, BsPerson } from 'react-icons/bs
 import './main.css';
 import { NavLink, useLocation, useOutlet } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import Tooltip from '../utils/Tooltip';
 
 function Main() {
     const location = useLocation()
@@ -20,10 +21,18 @@ function Main() {
                 <div className='profile'>
                     <Profile />
                     <div className='menu-container absolute flex flex-row justify-around p-4 text-2xl w-11/12'>
-                        <NavLink to="/" ><BsHouse className='menu-icons' /></NavLink>
-                        <NavLink to="/about"  ><BsPerson className='menu-icons' /></NavLink>
-                        <NavLink to="/projects" ><BsFileEarmarkCode className='menu-icons' /></NavLink>
-                        <NavLink to="/contact" ><BsEnvelope className='menu-icons' /></NavLink>
+                        <Tooltip text="Main Page">
+                            <NavLink to="/" ><BsHouse className='menu-icons' /></NavLink>
+                        </Tooltip>
+                        <Tooltip text="About">
+                            <NavLink to="/about"  ><BsPerson className='menu-icons' /></NavLink>
+                        </Tooltip>
+                        <Tooltip text="Projets">
+                            <NavLink to="/projects" ><BsFileEarmarkCode className='menu-icons' /></NavLink>
+                        </Tooltip>
+                        <Tooltip text="Contact">
+                            <NavLink to="/contact" ><BsEnvelope className='menu-icons' /></NavLink>
+                        </Tooltip>
                     </div>
                 </div>
                 <SwitchTransition>
