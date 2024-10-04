@@ -1,7 +1,0 @@
-.lang-icon{
-    @apply w-11 m-2;
-    transition: transform .5s;
-}
-.lang-icon:hover{
-    transform: scale(1.2);
-}

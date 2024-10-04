@@ -20,14 +20,14 @@ function Main() {
             <div className='main-container' style={style}>
                 <div className='profile'>
                     <Profile />
-                    <div className='menu-container absolute flex flex-row justify-around p-4 text-2xl w-11/12'>
+                    <div className='menu-container'>
                         <Tooltip text="Main Page">
                             <NavLink to="/" ><BsHouse className='menu-icons' /></NavLink>
                         </Tooltip>
                         <Tooltip text="About">
                             <NavLink to="/about"  ><BsPerson className='menu-icons' /></NavLink>
                         </Tooltip>
-                        <Tooltip text="Projets">
+                        <Tooltip text="Projects">
                             <NavLink to="/projects" ><BsFileEarmarkCode className='menu-icons' /></NavLink>
                         </Tooltip>
                         <Tooltip text="Contact">

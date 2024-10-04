@@ -15,6 +15,10 @@
     @apply text-red-700
 }
 
+.menu-container{
+    @apply absolute flex flex-row justify-around p-4 text-2xl w-11/12;
+}
+
 @media (max-width: 595px) {
     .main-container {
         @apply flex flex-col

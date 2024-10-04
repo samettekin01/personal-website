@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { handleAbout } from "../redux/slices/aboutSlice";
-import "./home.css"
 
 function Home() {
     const about = useSelector(state => state.about.about)
@@ -15,10 +14,10 @@ function Home() {
             <span>{about.title}</span>
             <div className="flex flex-row justify-center mt-4 flex-wrap">
 
-                {about.lang !== undefined ? Object.keys(about.lang).map((data, key) =>
+                {about.lang !== undefined ? Object.keys(about.lang).sort().map((data, key) =>
                     <img
                         key={key}
-                        className="lang-icon"
+                        className="lang-icon w-11 m-2 hover:scale-150 duration-300"
                         src={about.lang[data]}
                         alt={data}
                     />

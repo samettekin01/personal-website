@@ -1,3 +1,11 @@
+.about-container{
+    @apply absolute w-full h-full flex flex-row flex-wrap justify-around items-center overflow-auto p-2;
+}
+
+.project-card{
+    @apply flex flex-col items-center m-4 p-2 rounded-xl shadow-xl;
+}
+
 .project-image{
     @apply relative 
 }

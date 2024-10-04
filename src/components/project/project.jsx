@@ -16,12 +16,10 @@ function Project() {
     dispatch(handleProjects())
   }, [dispatch])
   return (
-    <div className={
-      `about-container absolute w-full h-full flex flex-row flex-wrap justify-around items-center overflow-auto p-2`}
-    >
+    <div className="about-container">
       {
         projects ? projects.map((data, index) =>
-          <div key={index} className="project-card flex flex-col items-center m-4 p-2 rounded-xl shadow-xl" style={style}>
+          <div key={index} className="project-card" style={style}>
             <span>{data.name}</span>
             <div className="project-image" style={{
               backgroundImage: `url(${data.img})`,
