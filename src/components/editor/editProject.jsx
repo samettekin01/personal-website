@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { deleteProject, getProject, handleProjects, projectShowHide } from "../redux/slices/projectsSlice"
+import { deleteProject, getProject, handleProjects, projectShowHide } from "../../redux/slices/projectsSlice"
 import { useTheme } from "../providers/provider";
 import { BsFillXCircleFill, BsPencilSquare } from "react-icons/bs"
 import EditorProjectForm from "./editorProjectForm/editorProjectForm";
@@ -12,8 +12,8 @@ function EditProject() {
         color: color.color2
     }
 
-    const projects = useSelector(state => state.projects.projects)
-    const projectStatus = useSelector(state => state.projects.projectStatus)
+    const { projects } = useSelector(state => state.projects)
+    const { projectStatus } = useSelector(state => state.projects)
     const [projectID, setProjectID] = useState("")
 
     const dispatch = useDispatch()

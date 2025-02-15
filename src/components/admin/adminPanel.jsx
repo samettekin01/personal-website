@@ -4,7 +4,7 @@ import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Tabs from "../tabs/tabs"
-import { signStatus } from "../redux/slices/signinSlice"
+import { signStatus } from "../../redux/slices/signinSlice"
 
 function AdminPanel() {
     const [error, setError] = useState("")

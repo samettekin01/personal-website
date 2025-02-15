@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { handleAbout, handleIcons } from "../redux/slices/aboutSlice";
+import { handleAbout, handleIcons } from "../../redux/slices/aboutSlice";
 
 function Contact() {
   const icons = useSelector(state => state.about.icons)

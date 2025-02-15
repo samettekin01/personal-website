@@ -1,6 +1,9 @@
 .profile-container {
     @apply flex flex-col p-4 justify-center rounded-3xl h-full relative;
-    background: linear-gradient(45deg, )
+    background: linear-gradient(45deg, );
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #0000006e,
+        -20px -20px 60px #0000006e;
 }
 
 .pr-img-container {
@@ -9,11 +12,12 @@
     background: linear-gradient(45deg, #610C9F, #940B92, #DA0C81, #E95793);
     transition: transform .5s;
 }
-.pr-img-container:hover{
+
+.pr-img-container:hover {
     transform: scale(1.05)
 }
 
-.pr-img{
+.pr-img {
     width: 250px;
     height: 250px;
     background-size: 150%;
@@ -26,51 +30,61 @@
     @apply flex flex-col items-center text-center mt-3;
 }
 
-.discord-container:hover .adress{
+.discord-container:hover .adress {
     @apply right-0;
     opacity: 90%;
     transition: opacity 1s;
 }
-.adress{
+
+.adress {
     @apply absolute opacity-0 -bottom-3;
 }
-.contact-cont{
+
+.contact-cont {
     @apply flex flex-row items-center justify-center relative;
 }
-.list-button{
+
+.list-button {
     @apply absolute bottom-3 p-2 rounded-lg shadow-md hover:opacity-80 active:opacity-100;
 }
-.list-options{
+
+.list-options {
     @apply absolute bottom-14 left-7 rounded-lg shadow-2xl w-28 text-lg;
     z-index: 1;
 }
 
 @media (max-width:595px) {
-    .profile-container{
+    .profile-container {
         @apply flex flex-row items-center w-full justify-between;
     }
-    .pr-img-container{
+
+    .pr-img-container {
         width: 150px;
         height: 150px;
         @apply flex items-center justify-center;
     }
-    .pr-img{
+
+    .pr-img {
         width: 140px;
         height: 140px;
         background-size: 150%;
         background-position-y: -50px;
         background-position-x: 212px;
     }
-    .info-container{
+
+    .info-container {
         @apply text-sm;
     }
-    .contact-cont{
+
+    .contact-cont {
         @apply flex-col;
     }
-    .list-button{
+
+    .list-button {
         @apply p-1 bottom-2 left-3;
     }
-    .list-options{
+
+    .list-options {
         @apply bottom-11 text-sm;
     }
 }

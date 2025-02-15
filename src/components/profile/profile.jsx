@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useTheme } from '../providers/provider'
 import { Listbox } from '@headlessui/react'
-import { theme } from '../data/theme'
+import { theme } from '../../data/theme'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleAbout, handleIcons } from '../redux/slices/aboutSlice'
+import { handleAbout, handleIcons } from '../../redux/slices/aboutSlice'
 import "./profile.css"
 
 function Profile() {
@@ -33,18 +33,18 @@ function Profile() {
           alt='Samet Tekin' />
       </div>
       <div className='info-container'>
-        <span>{about.name}</span>
-        <span>{about.title}</span>
+        <span>{about?.name}</span>
+        <span>{about?.title}</span>
         <button className='btn-blue'>
-          <a href={about.cv} target='_blank' rel='noreferrer'>CV indir</a>
+          <a href={about?.cv} target='_blank' rel='noreferrer'>CV indir</a>
         </button>
       </div>
       <div className='contact-cont'>
-        <a href={about.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
-        <a href={about.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
+        <a href={about?.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
+        <a href={about?.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
         <div className='discord-container'>
           <img src={icons.discord} className='w-10 m-2' alt='discord' />
-          <div className='adress'><span>{about.discord}</span></div>
+          <div className='adress'><span>{about?.discord}</span></div>
         </div>
       </div>
       <Listbox >

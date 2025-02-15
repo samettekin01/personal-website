@@ -3,7 +3,7 @@ import ProjectEditor from "../editor/projectEditor";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
-import { signStatus } from "../redux/slices/signinSlice";
+import { signStatus } from "../../redux/slices/signinSlice";
 import AboutEditor from "../editor/aboutEditor";
 import EditProject from "../editor/editProject";
 

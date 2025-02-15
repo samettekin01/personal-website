@@ -1,10 +1,10 @@
 import { useFormik } from "formik"
 import { useDispatch, useSelector } from "react-redux"
-import { langsIcons } from "../../data/language"
-import { handleProjects, projectShowHide } from "../../redux/slices/projectsSlice"
+import { langsIcons } from "../../../data/language"
+import { handleProjects, projectShowHide } from "../../../redux/slices/projectsSlice"
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase/firebase";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function EditorProjectForm({ id }) {
     const { editStatus, project } = useSelector(state => state.projects)
@@ -22,7 +22,7 @@ function EditorProjectForm({ id }) {
         img: "",
         lang: []
     }
-    const { values, handleSubmit, handleChange } = useFormik({
+    const { values, handleSubmit, handleChange, setValues } = useFormik({
         initialValues,
         onSubmit: async (values) => {
             let updateValue = {}
@@ -30,7 +30,7 @@ function EditorProjectForm({ id }) {
             Object.keys(values).forEach(val => {
                 if (values[val]) {
                     updateValue[val] = values[val]
-                } 
+                }
             })
             if (Object.keys(values.lang).length === 0) {
                 delete updateValue.lang
@@ -74,14 +74,14 @@ function EditorProjectForm({ id }) {
         }
     }
 
-    const projectStatus = useCallback(() => {
+    const projectStatus = () => {
         if (projectLangs) {
             project.lang && Object.keys(project.lang).map(data => values.lang.push(data))
             if (Object.keys(values.lang).length > 0) {
                 setProjectLangs(false)
             }
         }
-    }, [project.lang, values.lang, projectLangs])
+    }
 
     useEffect(() => {
         if (editStatus) {
@@ -93,6 +93,17 @@ function EditorProjectForm({ id }) {
             setProjectLangs(true)
         }
     }, [editStatus, project.lang, values])
+
+    useEffect(() => {
+        setValues({
+            name: project.name || "",
+            description: project.description || "",
+            code: project.code || "",
+            demo: project.demo || "",
+            img: project.img || "",
+            lang: project.lang ? Object.keys(project.lang) : [],
+        })
+    }, [setValues, project])
 
     return (
         <form className={`flex flex-col w-3/5 min-w-max p-2 rounded-lg bg-cyan-700 ${editStatus ? "block" : "hidden"}`} onSubmit={handleSubmit}>

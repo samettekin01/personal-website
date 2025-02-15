@@ -17,7 +17,7 @@ body,
 }
 
 .input-blue {
-    @apply text-black p-1 rounded-md outline-sky-600 hover:shadow-lg hover:bg-white/[0.10] 
+    @apply text-black p-1 rounded-md outline-sky-600 hover:shadow-lg hover:bg-white/[0.10]
 }
 
 .btn-blue {
@@ -36,6 +36,6 @@ body,
     @apply grid grid-cols-3 whitespace-nowrap min-w-max gap-1;
 }
 
-.checkbox-style{
-    @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 
+.checkbox-style {
+    @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500
 }

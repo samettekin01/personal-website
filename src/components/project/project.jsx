@@ -2,7 +2,7 @@ import { useTheme } from "../providers/provider";
 import "./project.css"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { handleProjects } from "../redux/slices/projectsSlice";
+import { handleProjects } from "../../redux/slices/projectsSlice";
 
 function Project() {
   const { color } = useTheme();

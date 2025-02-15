@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { collection, deleteDoc, doc, getDoc, getDocs, orderBy, query } from "firebase/firestore";
-import { db } from "../../../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 const projectsRef = query(collection(db, "projects"), orderBy("created", "desc"))
 export const handleProjects = createAsyncThunk("projects", async () => {

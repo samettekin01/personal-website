@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 export const handleAbout = createAsyncThunk("about", async () => {
     const querySnapshot = await getDocs(collection(db, "about"))

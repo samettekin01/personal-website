@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { handleAbout } from "../redux/slices/aboutSlice";
+import { handleAbout } from "../../redux/slices/aboutSlice";
 
 function About() {
     const about = useSelector(state => state.about.about)

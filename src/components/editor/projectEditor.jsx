@@ -1,10 +1,10 @@
 import { db } from "../../firebase/firebase"
 import { addDoc, collection } from "firebase/firestore"
 import { useFormik } from "formik"
-import { langsIcons } from "../data/language"
+import { langsIcons } from "../../data/language"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
-import { handleAbout } from "../redux/slices/aboutSlice"
+import { handleAbout } from "../../redux/slices/aboutSlice"
 
 function ProjectEditor() {
     const projectRef = collection(db, "projects")
