@@ -9,10 +9,11 @@ function About() {
         dispatch(handleAbout())
     }, [dispatch])
     return (
-        <div className="about-container absolute w-full h-full flex flex-col p-6 overflow-auto min-h-min">
+        <div className="about-container absolute w-full h-full flex flex-col p-12 overflow-auto min-h-min">
+            <span className="mt-10 font-bold text-xl">About me: </span>
             <span className="whitespace-pre-line">{about && about.about}</span>
-            <span className="mt-10 font-bold underline">Şuanda ne yapıyorum:</span><span>{about && about.now}</span>
-            <span className="mt-10 font-bold underline">Hobilerim: </span><span>{about && about.hobbies}</span>
+            <span className="mt-10 font-bold text-xl">What I'm doing now?: </span><span>{about && about.now}</span>
+            <span className="mt-10 font-bold text-xl">Hobbies: </span><span>{about && about.hobbies}</span>
         </div>
     )
 }
