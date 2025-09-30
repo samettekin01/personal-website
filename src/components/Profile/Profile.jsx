@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useTheme } from '../providers/provider'
+import { useTheme } from '../Providers/Provider'
 import { Listbox } from '@headlessui/react'
 import { theme } from '../../data/theme'
 import { useDispatch, useSelector } from 'react-redux'
@@ -40,10 +40,11 @@ function Profile() {
         </button>
       </div>
       <div className='contact-cont'>
-        <a href={about?.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10 m-2' alt='linkedln' /></a>
-        <a href={about?.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10 m-2' alt='github' /></a>
+        <a href={about?.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10' alt='linkedln' /></a>
+        <a href={about?.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10' alt='github' /></a>
+        <a href={about?.instagram} target="_blank" rel="noreferrer"><img src={icons.instagram} className='w-10' alt='PatroNoma' /></a>
         <div className='discord-container'>
-          <img src={icons.discord} className='w-10 m-2' alt='discord' />
+          <img src={icons.discord} className='w-10' alt='discord' />
           <div className='adress'><span>{about?.discord}</span></div>
         </div>
       </div>
@@ -57,7 +58,7 @@ function Profile() {
           style={style}
         >
           {theme ? theme.map((data, i) =>
-            <Listbox.Option className="p-3 rounded-lg hover:bg-white hover:text-black hover:opacity-50 hover:font-bold" key={i} onClick={() => handleTheme(i)}>{data.name}</Listbox.Option>
+            <Listbox.Option className={`py-0.5 px-2 m-1 rounded-lg hover:bg-white hover:text-black hover:opacity-50 hover:font-bold ${data.name === color.name ? "bg-white text-black opacity-50 font-bold" : ""}`} key={i} onClick={() => handleTheme(i)}>{data.name}</Listbox.Option>
           ) : "Loading...."}
         </Listbox.Options>
       </Listbox>

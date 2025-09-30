@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { deleteProject, getProject, handleProjects, projectShowHide } from "../../redux/slices/projectsSlice"
-import { useTheme } from "../providers/provider";
+import { useTheme } from "../Providers/Provider";
 import { BsFillXCircleFill, BsPencilSquare } from "react-icons/bs"
-import EditorProjectForm from "./editorProjectForm/editorProjectForm";
+import EditorProjectForm from "./EditorProjectForm/EditorProjectForm";
 
 function EditProject() {
     const { color } = useTheme();

@@ -1,11 +1,11 @@
-import Profile from '../profile/profile';
-import { useTheme } from '../providers/provider';
+import Profile from '../Profile/Profile';
+import { useTheme } from '../Providers/Provider';
 import { BsEnvelope, BsFileEarmarkCode, BsHouse, BsPerson } from 'react-icons/bs'
 
 import './main.css';
 import { NavLink, useLocation, useOutlet } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
-import Tooltip from '../utils/Tooltip';
+import Tooltip from '../Utils/tooltip';
 
 function Main() {
     const location = useLocation()

@@ -1,4 +1,4 @@
-import { useTheme } from "../providers/provider";
+import { useTheme } from "../Providers/Provider";
 import "./project.css"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -16,7 +16,7 @@ function Project() {
     dispatch(handleProjects())
   }, [dispatch])
   return (
-    <div className="about-container">
+    <div className="projects-container">
       {
         projects ? projects.map((data, index) =>
           <div key={index} className="project-card" style={style}>
@@ -27,7 +27,7 @@ function Project() {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               width: "240px",
-              height: "160px",
+              height: "140px",
               zIndex: "1",
             }} >
               <div className="project-descript">

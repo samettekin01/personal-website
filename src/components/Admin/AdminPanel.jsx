@@ -3,7 +3,7 @@ import { auth } from "../../firebase/firebase"
 import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import Tabs from "../tabs/tabs"
+import Tabs from "../Tabs/Tabs"
 import { signStatus } from "../../redux/slices/signinSlice"
 
 function AdminPanel() {

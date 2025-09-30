@@ -1,11 +1,11 @@
 import { Tab } from "@headlessui/react"
-import ProjectEditor from "../editor/projectEditor";
+import ProjectEditor from "../Editor/ProjectEditor";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
 import { signStatus } from "../../redux/slices/signinSlice";
-import AboutEditor from "../editor/aboutEditor";
-import EditProject from "../editor/editProject";
+import AboutEditor from "../Editor/AboutEditor";
+import EditProject from "../Editor/EditProject";
 
 function Tabs() {
     const isUserSignIn = useSelector(state => state.signin.sign)
