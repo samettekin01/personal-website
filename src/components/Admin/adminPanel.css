@@ -1,0 +1,9 @@
+@reference "tailwindcss";
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+    @apply text-black p-1 rounded-md outline-sky-600 hover:shadow-lg hover:bg-white/[0.10] bg-white;
+}
+
+textarea {
+    @apply text-black p-1 rounded-md outline-sky-600 hover:shadow-lg hover:bg-white/[0.10] bg-white;
+}
