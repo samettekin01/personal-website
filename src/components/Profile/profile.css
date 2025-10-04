@@ -1,18 +1,16 @@
 @reference "tailwindcss";
 
 .profile-container {
-    @apply flex flex-col p-4 justify-center rounded-3xl h-full relative;
-    background: linear-gradient(45deg, );
-    background: #e0e0e0;
-    box-shadow: 20px 20px 60px #0000006e,
-        -20px -20px 60px #0000006e;
+    @apply p-4 justify-center rounded-3xl h-full relative shadow-2xl;
 }
 
+.profile-container-mobile{
+    @apply flex flex-col w-full h-full p-4 justify-around gap-3;
+}
 .pr-img-container {
-    @apply p-1;
+    @apply p-1 transform duration-500;
     clip-path: circle(50%);
     background: linear-gradient(45deg, #610C9F, #940B92, #DA0C81, #E95793);
-    transition: transform .5s;
 }
 
 .pr-img-container:hover {
@@ -20,30 +18,28 @@
 }
 
 .pr-img {
-    width: 230px;
-    height: 230px;
-    background-size: 150%;
-    background-position-y: -100px;
-    background-position-x: 340px;
+    @apply w-[230px] h-[230px] bg-size-[150%] bg-position-[0px_-100px] ;
     clip-path: circle(50%);
 }
 
 .info-container {
-    @apply flex flex-col items-center text-center mt-3;
+    @apply flex flex-col items-center text-center p-2 mt-3 gap-2;
+}
+
+.discord-container {
+    @apply relative;
 }
 
 .discord-container:hover .adress {
-    @apply right-0;
-    opacity: 90%;
-    transition: opacity 1s;
+    @apply right-0 opacity-90 duration-1000;
 }
 
 .adress {
-    @apply absolute opacity-0 -bottom-3;
+    @apply absolute opacity-0 -top-4 -left-8;
 }
 
 .contact-cont {
-    @apply grid-cols-4 md:w-full mt-3 flex flex-row items-center justify-center relative gap-3 min-w-8;
+    @apply grid-cols-4 md:w-full mb-3 flex flex-row items-center justify-center relative gap-3 min-w-8;
 }
 
 .list-button {
@@ -51,31 +47,28 @@
 }
 
 .list-options {
-    @apply absolute max-h-3/4 overflow-auto bottom-14 left-7 rounded-lg shadow-2xl w-32 text-lg;
-    z-index: 1;
+    @apply absolute max-h-3/5 overflow-auto bottom-14 left-7 rounded-lg shadow-2xl w-32 text-lg z-[1];
 }
 
 @media (max-width:650px) {
     .profile-container {
-        @apply flex flex-row items-center w-full justify-between;
+        @apply items-center w-full;
+    }
+
+    .profile-container-mobile {
+        @apply flex flex-row items-center w-11/12 justify-around;
     }
 
     .pr-img-container {
-        width: 150px;
-        height: 150px;
-        @apply flex items-center justify-center;
+        @apply flex w-[150px] h-[150px] items-center justify-center;
     }
 
     .pr-img {
-        width: 140px;
-        height: 140px;
-        background-size: 150%;
-        background-position-y: -50px;
-        background-position-x: 212px;
+        @apply w-[140px] h-[140px] bg-size-[150%] bg-position-[212px_-50px];
     }
 
     .info-container {
-        @apply text-sm;
+        @apply text-sm flex-row;
     }
 
     .contact-cont {

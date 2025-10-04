@@ -3,13 +3,10 @@
 html,
 body,
 #root,
-.App,
-.Main {
+.main {
+    @apply flex justify-center items-center overflow-x-hidden;
     width: 100%;
-    min-width: 362px;
     height: 100%;
-    min-height: 600px;
-    @apply flex justify-center items-center;
     background-color: #fcfbfc;
     background-image:
         radial-gradient(circle at 25px 25px, #e8e6e8 2px, transparent 2px),
@@ -22,7 +19,7 @@ body,
 }
 
 .btn-blue {
-    @apply pr-3 pl-3 p-1 m-1 text-white bg-sky-500 rounded-xl hover:bg-sky-500/[0.8] hover:shadow-lg active:bg-sky-600;
+    @apply pr-3 pl-3 p-1 m-1 text-white bg-sky-500 rounded-xl hover:bg-sky-500/[0.8] hover:shadow-lg active:bg-sky-600 whitespace-nowrap;
 }
 
 .btn-red {

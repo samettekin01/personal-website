@@ -12,9 +12,10 @@ function Profile() {
     background: `linear-gradient(45deg, ${color.background1}, ${color.background2})`,
     color: color.color2
   }
-  const about = useSelector(state => state.about.about)
-  const icons = useSelector(state => state.about.icons)
+  const { about, icons } = useSelector(state => state.about)
   const dispatch = useDispatch()
+
+  const socials = ["linkedin", "github", "instagram", "discord"]
   useEffect(() => {
     dispatch(handleAbout())
     dispatch(handleIcons())
@@ -24,44 +25,51 @@ function Profile() {
       className='profile-container'
       style={style}
     >
-      <div className='pr-img-container'>
-        <div
-          className='pr-img'
-          style={{
-            backgroundImage: `url(${icons.profile})`,
-          }}
-          alt='Samet Tekin' />
-      </div>
-      <div className='info-container'>
-        <span>{about?.name}</span>
-        <span>{about?.title}</span>
-        <button className='btn-blue'>
-          <a href={about?.cv} target='_blank' rel='noreferrer'>CV indir</a>
+      <div className='profile-container-mobile'>
+        <div className='info-container'>
+          <div className='pr-img-container'>
+            <div
+              className='pr-img'
+              style={{
+                backgroundImage: `url(${icons.profile})`,
+              }}
+              alt='Samet Tekin' />
+          </div>
+          <div className='flex flex-col'>
+            <span className='whitespace-nowrap text-2xl'>{about?.name}</span>
+            <span>{about?.title}</span>
+          </div>
+        </div>
+        <div className='contact-cont'>
+          {socials.map((data, i) =>
+            data !== "discord" ?
+              <a key={i} href={about[data]} target="_blank" rel="noreferrer">
+                <img src={icons[data]} className='w-10' alt={data} />
+              </a> :
+              <div className='discord-container' key={i}>
+                <img src={icons[data]} className='w-10' alt={data} />
+                <div className='adress'><span>{about[data]}</span></div>
+              </div>
+          )}
+        </div>
+        <Listbox >
+          <Listbox.Button
+            className="list-button"
+            style={{ backgroundColor: color.background2 }}
+          >Themes</Listbox.Button>
+          <Listbox.Options
+            className="list-options"
+            style={style}
+          >
+            {theme ? theme.map((data, i) =>
+              <Listbox.Option className={`py-0.5 px-2 m-1 rounded-lg hover:bg-white hover:text-black hover:opacity-50 hover:font-bold ${data.name === color.name ? "bg-white text-black opacity-50 font-bold" : ""}`} key={i} onClick={() => handleTheme(i)}>{data.name}</Listbox.Option>
+            ) : "Loading...."}
+          </Listbox.Options>
+        </Listbox>
+        <button className='btn-blue absolute bottom-2 right-2'>
+          <a href={about?.cv} target='_blank' rel='noreferrer'>CV Download</a>
         </button>
       </div>
-      <div className='contact-cont'>
-        <a href={about?.linkedin} target="_blank" rel="noreferrer"><img src={icons.linkedin} className='w-10' alt='linkedln' /></a>
-        <a href={about?.github} target="_blank" rel="noreferrer"><img src={icons.github} className='w-10' alt='github' /></a>
-        <a href={about?.instagram} target="_blank" rel="noreferrer"><img src={icons.instagram} className='w-10' alt='PatroNoma' /></a>
-        <div className='discord-container'>
-          <img src={icons.discord} className='w-10' alt='discord' />
-          <div className='adress'><span>{about?.discord}</span></div>
-        </div>
-      </div>
-      <Listbox >
-        <Listbox.Button
-          className="list-button"
-          style={{ backgroundColor: color.background2 }}
-        >Themes</Listbox.Button>
-        <Listbox.Options
-          className="list-options"
-          style={style}
-        >
-          {theme ? theme.map((data, i) =>
-            <Listbox.Option className={`py-0.5 px-2 m-1 rounded-lg hover:bg-white hover:text-black hover:opacity-50 hover:font-bold ${data.name === color.name ? "bg-white text-black opacity-50 font-bold" : ""}`} key={i} onClick={() => handleTheme(i)}>{data.name}</Listbox.Option>
-          ) : "Loading...."}
-        </Listbox.Options>
-      </Listbox>
     </div>
   )
 }

@@ -1,11 +1,10 @@
 import Profile from '../Profile/Profile';
 import { useTheme } from '../Providers/Provider';
 import { BsEnvelope, BsFileEarmarkCode, BsHouse, BsPerson } from 'react-icons/bs'
-
-import './main.css';
 import { NavLink, useLocation, useOutlet } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import Tooltip from '../Utils/tooltip';
+import './main.css';
 
 function Main() {
     const location = useLocation()
@@ -16,7 +15,7 @@ function Main() {
         color: color.color2
     }
     return (
-        <div className="Main">
+        <div className="main">
             <div className='main-container' style={style}>
                 <div className='profile'>
                     <Profile />
