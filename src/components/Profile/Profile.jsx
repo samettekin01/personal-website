@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useTheme } from '../Providers/Provider'
 import { Listbox } from '@headlessui/react'
 import { theme } from '../../data/theme'
@@ -67,7 +67,7 @@ function Profile() {
           </Listbox.Options>
         </Listbox>
         <button className='btn-blue absolute bottom-2 right-2'>
-          <a href={about?.cv} target='_blank' rel='noreferrer'>CV Download</a>
+          <a href={about?.cv} target='_blank' rel='noreferrer'>Download CV</a>
         </button>
       </div>
     </div>

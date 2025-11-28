@@ -12,6 +12,7 @@ export const handleIcons = createAsyncThunk("icons", async () => {
     const icons = querySnapshot.docs.map(doc => doc.data())
     return icons
 })
+
 const aboutSlice = createSlice({
     name: "about",
     initialState: {

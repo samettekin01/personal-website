@@ -6,6 +6,8 @@ import { signOut } from "firebase/auth";
 import { signStatus } from "../../redux/slices/signinSlice";
 import AboutEditor from "../Editor/AboutEditor";
 import EditProject from "../Editor/EditProject";
+import Languages from "../Editor/Languages";
+
 
 function Tabs() {
     const isUserSignIn = useSelector(state => state.signin.sign)
@@ -18,14 +20,14 @@ function Tabs() {
             dispatch(signStatus(false))
         }
     }
-    const tabMenu = ["About", "Add Project", "Edit Project"]
+    const tabMenu = ["About", "Add Project", "Edit Project", "Languages"]
     return (
         <div className="w-full h-full ">
             <div className="flex justify-end mt-2 mr-2">
                 <button className="btn-blue" onClick={handleSignOut}>Sign out</button>
             </div>
             <Tab.Group>
-                <Tab.List className="flex p-2 justify-center gap-2 rounded-xl bg-cyan-900/20 w-3/5 mx-auto">
+                <Tab.List className="flex p-2 justify-center gap-2 rounded-xl bg-cyan-900/20 lg:w-3/5 w-11/12 mx-auto">
                     {
                         tabMenu.map((menu, index) =>
                             <Tab key={index} className={({ selected }) => `w-2/5 rounded-lg text-sm p-2 ${selected ? `bg-white text-black shadow` : `text-white hover:bg-white/[0.10] `}`}>{menu}</Tab>
@@ -36,6 +38,7 @@ function Tabs() {
                     <Tab.Panel><AboutEditor /></Tab.Panel>
                     <Tab.Panel><ProjectEditor /></Tab.Panel>
                     <Tab.Panel><EditProject /></Tab.Panel>
+                    <Tab.Panel><Languages /></Tab.Panel>
                 </Tab.Panels>
             </Tab.Group>
         </div>
